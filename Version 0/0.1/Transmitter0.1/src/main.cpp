@@ -37,5 +37,5 @@ void loop() {
   itoa(currentPercent, buffer, 10);
   Serial.println(buffer);
   radio.write(&buffer, sizeof(buffer));
-  delay(500);
+  delay(400);
 }
