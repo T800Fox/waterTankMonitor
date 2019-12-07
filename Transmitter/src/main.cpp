@@ -23,7 +23,7 @@ void setup() {
   // initalizing radio
   radio.begin();
   radio.openWritingPipe(address);
-  radio.setPALevel(RF24_PA_MAX); // replace MIN with MAX if working over longer distances
+  radio.setPALevel(RF24_PA_MIN); // replace MIN with MAX if working over longer distances
   radio.stopListening();
 }
 
@@ -32,7 +32,6 @@ void setup() {
 void loop() {
   currentPercent = mainTank.getTankPercentage();
   long currentDistance = mainTank.getDistance();
-  Serial.println(currentDistance);
 
   itoa(currentPercent, buffer, 10);
   Serial.println(buffer);
